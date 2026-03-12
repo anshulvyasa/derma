@@ -4,7 +4,7 @@ import "./globals.css";
 import { Raleway } from "next/font/google";
 import { Lato } from "next/font/google";
 import { Viga } from "next/font/google";
-import Header from "../components/common/header";
+// import Header from "../components/common/header";
 import Footer from "../components/common/footer";
 export const lato = Lato({
   subsets: ["latin"],
@@ -47,7 +47,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${raleway.variable} ${lato.variable} ${viga.variable}`}
       >
         <div className="relative flex flex-col min-h-screen">
-          <Header />
+          {/* <Header /> */}
           <main className="flex-1">{children}</main>
           <Footer />
         </div>

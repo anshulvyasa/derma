@@ -3,6 +3,8 @@
 @import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
+@source "../components/**/*.{tsx,ts}";
+@source "../app/**/*.{tsx,ts}";
 
 :root {
   --primary: oklch(0.205 0 0);
@@ -38,8 +40,8 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
   --custom-color-1: #4c4c4c;
-  --custom-color-2: #A6D1CA4F;
-  --custom-color-3: #25544C;
+  --custom-color-2: #a6d1ca4f;
+  --custom-color-3: #25544c;
 }
 
 html,
@@ -63,7 +65,7 @@ a {
   display: none;
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
@@ -170,19 +172,16 @@ a {
   }
 }
 
-
-
-
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active{
-    /* Change the hex color below to match your 'bg-custom-2' exact color */
-    -webkit-box-shadow: 0 0 0 30px #e8f3f1 inset !important;
-    
-    /* Change this to match your text color */
-    -webkit-text-fill-color: #374151 !important; 
-    
-    /* Optional: Keeps the background color from flashing */
-    transition: background-color 5000s ease-in-out 0s;
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  /* Change the hex color below to match your 'bg-custom-2' exact color */
+  -webkit-box-shadow: 0 0 0 30px #e8f3f1 inset !important;
+
+  /* Change this to match your text color */
+  -webkit-text-fill-color: #374151 !important;
+
+  /* Optional: Keeps the background color from flashing */
+  transition: background-color 5000s ease-in-out 0s;
 }
