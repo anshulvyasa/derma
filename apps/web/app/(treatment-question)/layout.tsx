@@ -1,6 +1,9 @@
-import React from "react";
 import StoreProvider from "../../providers/storeprovider";
+import { Toaster } from "@/components/ui/sonner";
 
 export default function TreatmentLayout({ children }: { children: React.ReactNode }) {
-    return <StoreProvider>{children}</StoreProvider>
+    return <StoreProvider>
+        <main>{children}</main>
+        <Toaster />
+    </StoreProvider>
 }
