@@ -3,6 +3,8 @@
 import { isAction, Middleware } from "@reduxjs/toolkit";
 import { RootState } from "./store";
 import { CustomerPersonalInfo } from "./features/personalInfo";
+import { MajorIndex } from "./features/majorIndex";
+import { Questions } from "./features/questions";
 
 // defining Some Contant
 const MAJOR_INDEX_PREFIX = "derma-current-major-index";
@@ -39,6 +41,23 @@ export const persistMiddleware: Middleware<{}, RootState> = (store) => (next) =>
 
 //***************************************************************************************************************************************************** */
 // Defining The Readers
+
+export const readMajorIndex = () => {
+    const item = sessionStorage.getItem(MAJOR_INDEX_PREFIX);
+
+    if(!item) return null;
+
+    try {
+       const res=JSON.parse(item) as MajorIndex;
+       return res;
+    }
+    catch (error) {
+        console.error('Error Parshing The Major Info');
+        sessionStorage.removeItem(MAJOR_INDEX_PREFIX);
+        return null;
+    }
+}
+
 export const readPersonalInfo = () => {
     const item = sessionStorage.getItem(PERSONAL_INFO_PREFIX);
 
@@ -49,8 +68,24 @@ export const readPersonalInfo = () => {
         return res;
     }
     catch (error) {
-        console.error('Error Parshing the Personal INfo');
+        console.error('Error Parshing the Personal Info');
         sessionStorage.removeItem(PERSONAL_INFO_PREFIX);
+        return null;
+    }
+}
+
+export const readQuestions = () => {
+    const item = sessionStorage.getItem(QUESTIONS_PREFIX);
+
+    if(!item) return null;
+
+    try {
+       const res=JSON.parse(item) as Questions;
+       return res;
+    }
+    catch (error) {
+        console.error('Error Parshing The Major Info');
+        sessionStorage.removeItem(QUESTIONS_PREFIX);
         return null;
     }
 }

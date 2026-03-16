@@ -22,7 +22,7 @@ export const usePersonalInfo = () => {
         dispatch(updateGenderReducer(gender))
     }
 
-    const initializePersonalInfo = (info: CustomerPersonalInfo | null) => {
+    const initializePersonalInfo = (info: CustomerPersonalInfo) => {
         dispatch(initializePersonalInfoReducer(info));
     }
 

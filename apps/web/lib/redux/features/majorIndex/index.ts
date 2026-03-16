@@ -4,7 +4,6 @@ export interface MajorIndex {
     majorIndex: number
 }
 
-
 const initialState: MajorIndex = {
     majorIndex: 0
 }
@@ -13,13 +12,10 @@ const countSlice = createSlice({
     name: "majorIndex",
     initialState,
     reducers: {
-        increaseCount(state) {
-            state.majorIndex += 1;
+        updateMajorIndexReducer(state, action: PayloadAction<number>) {
+            state.majorIndex = action.payload;
         },
-        decrementCount(state) {
-            state.majorIndex -= 1;
-        },
-        initializeState(state, action: PayloadAction<MajorIndex>) {
+        initializeMajorIndexReducer(state, action: PayloadAction<MajorIndex>) {
             return action.payload;
         }
     }
@@ -27,4 +23,4 @@ const countSlice = createSlice({
 
 
 export default countSlice.reducer;
-export const { increaseCount, decrementCount, initializeState } = countSlice.actions;
+export const { updateMajorIndexReducer, initializeMajorIndexReducer } = countSlice.actions;
