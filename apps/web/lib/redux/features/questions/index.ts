@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface Questions {
     questionIndex: number;
-    selectedOptions: Record<number, number>
+    selectedOptions: Record<string, string>
 }
 
 const initialState: Questions = {
@@ -15,17 +15,20 @@ const questionSlice = createSlice({
     initialState,
     reducers: {
         // will also be used to update the existing record
-        addRecord(state, action: PayloadAction<{ key: number, selectedOption: number }>) {
+        addRecordReducer(state, action: PayloadAction<{ key: string, selectedOption: string }>) {
             state.selectedOptions[action.payload.key] = action.payload.selectedOption;
         },
-        updateQuestionIndex(state, action: PayloadAction<number>) {
+        updateQuestionIndexReducer(state, action: PayloadAction<number>) {
             state.questionIndex = action.payload;   // updating the Question With The New Index
         },
-        clearRecord() {
+        clearQuestionStateReducer() {
             return initialState;
+        },
+        initializeQuestionsReducer(state, action: PayloadAction<Questions>) {
+            return action.payload;
         }
     }
 })
 
 export default questionSlice.reducer;
-export const { addRecord, updateQuestionIndex, clearRecord } = questionSlice.actions;
+export const { addRecordReducer, updateQuestionIndexReducer, clearQuestionStateReducer, initializeQuestionsReducer } = questionSlice.actions;

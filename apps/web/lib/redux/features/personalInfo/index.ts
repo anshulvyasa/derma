@@ -39,8 +39,7 @@ export const personalInfoSlice = createSlice({
         clearPersonalInfo() {
             return initialState;
         },
-        initializePersonalInfoReducer(state, action: PayloadAction<CustomerPersonalInfo | null>) {
-            if(!action.payload) return initialState;
+        initializePersonalInfoReducer(state, action: PayloadAction<CustomerPersonalInfo>) {
             return action.payload;
         }
     }
