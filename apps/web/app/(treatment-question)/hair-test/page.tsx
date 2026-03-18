@@ -1,35 +1,24 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { decrementCount, increaseCount, initializeState } from "../../../lib/redux/features/count";
-import { useAppDispatch, useAppSelector } from "../../../lib/redux/hooks";
-import { loadState } from "../../../lib/redux/load-initial-state";
+import { CurrentHairSection } from "@/components/hair/hair-current-section";
+import { PersonalInfoForm } from "@/components/hair/personal-form";
+import { Questions } from "@/components/hair/questions";
+import { useMajorIndex } from "@/lib/redux/selectorAndDispatcher/useMajorIndex";
 
 const HairTreatement = () => {
-    const dispatch = useAppDispatch();
-    const selector = useAppSelector(state => state.count.count);
-    const [loading, setIsLoading] = useState<boolean>(true);
-
-    // loading initial State
-    useEffect(() => {
-        const countState = loadState();
-
-
-        dispatch(initializeState(countState));
-
-        setIsLoading(false);
-    }, [])
-
-    if (loading) return <div>Loading....</div>
+    const { majorIndex} = useMajorIndex();
 
     return (
-        <div>
-            <h1>Count is {selector}</h1>
+        <main className="px-30! overflow-hidden">
+            <h1 className="text-[#25544C] font-serif text-[44px] mt-20! font-semibold ">Let us know more about you.</h1>
 
-            <button onClick={() => dispatch(increaseCount())}>Increase</button>\
-            <button onClick={() => dispatch(decrementCount())}>Decrease</button>
-        </div>
-
+            <CurrentHairSection />
+            <div className="flex justify-center">
+                {majorIndex.majorIndex == 0 && <PersonalInfoForm />}
+                {majorIndex.majorIndex != 0 && <Questions />}
+               
+            </div>
+        </main>
     )
 }
 
