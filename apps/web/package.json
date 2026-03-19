@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "next dev --port 3000",
+    "dev": "next dev --turbo --port 3000",
     "build": "next build",
     "start": "next start",
     "lint": "eslint --max-warnings 0",
@@ -13,6 +13,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.2",
     "@repo/ui": "workspace:*",
+    "embla-carousel-react": "^8.6.0",
     "@repo/zod":"workspace:*",
     "@tailwindcss/postcss": "^4.2.1",
     "class-variance-authority": "^0.7.1",
