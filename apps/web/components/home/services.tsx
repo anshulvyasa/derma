@@ -28,7 +28,6 @@ export default function Services() {
   return (
     <section className="bg-gray-50 py-16! px-45!">
       <div className="max-w-6xl mx-auto">
-        {/* Header Section */}
         <div className="mb-10! flex flex-col justify-center items-center text-center gap-y-2">
           <span className="text-gray-600/90 font-(family-name:--font-viga) text-[23px] font-medium">
             Our Services
@@ -41,8 +40,6 @@ export default function Services() {
             treatments for healthy, confident results.
           </p>
         </div>
-
-        {/* Cards Grid */}
         <div className="flex flex-wrap justify-center gap-10!">
           {services.map((service, index) => (
             <div 

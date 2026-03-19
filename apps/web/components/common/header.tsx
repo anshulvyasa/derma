@@ -103,8 +103,10 @@ export default function Header() {
                   ref={el => { itemRefs.current[i] = el }}
                   onMouseEnter={e => { moveIndicatorTo(e.currentTarget); setHoveredIndex(i) }}
                   className={`relative z-10 px-8! py-2! rounded-md font-(family-name:--font-viga) text-[18px] transition-colors duration-300 ${
-                    hoveredIndex === i
+                    hoveredIndex !== null
+                      ? hoveredIndex === i
                       ? "text-white!"
+                      : "text-[#25544C]"
                       : isActive
                       ? "text-white!"
                       : "text-[#25544C]"
@@ -124,12 +126,14 @@ export default function Header() {
                 ref={el => { itemRefs.current[navLinks.length] = el }}
                 onMouseEnter={e => { moveIndicatorTo(e.currentTarget); setHoveredIndex(navLinks.length) }}
                 onClick={() => setServicesOpen(o => !o)}
-                className={`relative z-10 flex items-center gap-1 px-4! py-2! rounded-md font-(family-name:--font-viga) text-[18px] transition-colors duration-300 ${
-                  hoveredIndex === navLinks.length
-                    ? "text-[white]!"
-                    : serviceLinks.some(s => pathname.startsWith(s.href))
-                    ? "text-[white]"
-                    : "text-[#25544C]!"
+                className={`relative z-10 text-black flex items-center gap-1 px-4! py-2! rounded-md font-(family-name:--font-viga) text-[18px] transition-colors duration-300 ${
+                  hoveredIndex !== null
+  ? hoveredIndex === navLinks.length
+    ? "text-white"
+    : "text-[#25544C]"
+  : serviceLinks.some(s => pathname.startsWith(s.href))
+  ? "text-white"
+  : "text-[#25544C]"
                 }`}
               >
                 Services

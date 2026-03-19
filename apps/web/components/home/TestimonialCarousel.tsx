@@ -21,14 +21,17 @@ const lato = Lato({
 
 export default function TestimonialCarousel() {
   return (
-    <section className={`w-full flex justify-center py-10 md:py-20 bg-white ${lato.className}`}>
-      <div className="w-full max-w-5xl text-center px-8 md:px-12">
+    <section className={`w-full flex justify-center md:pt-3! pb-8! bg-white ${lato.className}`}>
+      <div className="w-full max-w-5xl text-center px-8! md:px-12!">
 
         {/* Heading */}
-        <div className="flex items-center justify-center gap-3 mb-8">
-          <Image src={LeafLeft} alt="leaf" className="w-9 h-9 md:w-[90px] md:h-[90px] -rotate-[8deg]" />
-          <h2 className="text-lg md:text-2xl font-semibold text-[#25544C]">Client Feedback</h2>
-          <Image src={LeafRight} alt="leaf" className="w-9 h-9 md:w-[90px] md:h-[90px] rotate-[8deg]" />
+        <div className="flex items-center justify-center gap-3 mb-4!">
+          <Image src={LeafLeft} alt="leaf" className="w-9 h-9 md:w-[140px] md:h-[140px] -rotate-[8deg]" />
+          <div className="flex flex-col items-center">
+            <h2 className="text-lg md:text-[29px] font-(family-name:--font-subhead) italic font-semibold text-[#858585]">Testimonials from</h2>
+            <h2 className="text-lg md:text-[29px] font-(family-name:--font-subhead) italic font-semibold text-[#25544C]">Our Loyal Customers</h2>
+          </div>
+          <Image src={LeafRight} alt="leaf" className="w-9 h-9 md:w-[140px] md:h-[140px] rotate-[8deg]" />
         </div>
 
         {/* Carousel */}
@@ -39,15 +42,15 @@ export default function TestimonialCarousel() {
                 <div className="flex justify-center">
 
                   {/* Card */}
-                  <div className="bg-[#E5E5E5] shadow-sm rounded-3xl max-w-xl w-full px-6 py-10 md:px-12 md:py-14 flex flex-col items-center gap-4 text-center" style={{padding: "10px 10px", marginBottom: "20px"}}>
+                  <div className="bg-[#E5E5E5] shadow-sm rounded-3xl max-w-xl w-full px-6! py-10! md:px-12! md:py-6! flex flex-col items-center gap-4 text-center" style={{padding: "10px 10px", marginBottom: "20px"}}>
 
                     {/* Title */}
-                    <h3 className="text-base md:text-xl font-semibold text-gray-800">
+                    <h3 className="text-base md:text-[22px] font-(family-name:--font-subhead) font-semibold text-gray-800">
                       {t.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-sm md:text-base text-[#8B8B8B] italic leading-relaxed">
+                    <p className="text-sm md:text-[19px] font-(family-name:--font-subhead) text-[#8B8B8B] italic leading-relaxed">
                       {t.text}
                     </p>
 
@@ -56,11 +59,11 @@ export default function TestimonialCarousel() {
                       {Array.from({ length: t.rating }).map((_, i) => (
                         <span key={i} className="text-[#25544C] text-lg md:text-xl">★</span>
                       ))}
-                      <span className="ml-1 text-sm md:text-base text-gray-700">{t.rating}.0</span>
+                      <span className="ml-1! text-sm md:text-base text-gray-700">{t.rating}.0</span>
                     </div>
 
                     {/* Name + Role */}
-                    <div className="mt-2">
+                    <div>
                       <p className="text-sm md:text-lg font-semibold text-gray-900">{t.name}</p>
                       <p className="text-xs md:text-sm text-gray-500">{t.role}</p>
                     </div>
@@ -72,8 +75,8 @@ export default function TestimonialCarousel() {
           </CarouselContent>
 
           {/* Arrows */}
-          <CarouselPrevious className="bg-[#25544C] text-white border-none shadow-md w-8 h-8 md:w-10 md:h-10 left-0" />
-          <CarouselNext className="bg-[#25544C] text-white border-none shadow-md w-8 h-8 md:w-10 md:h-10 right-0" />
+          <CarouselPrevious className="bg-[#25544C] text-white border-none shadow-md top-41 md:w-11 md:h-13 left-0" />
+          <CarouselNext className="bg-[#25544C] text-white border-none shadow-md top-41 md:w-11 md:h-13 right-0" />
         </Carousel>
 
       </div>

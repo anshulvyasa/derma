@@ -24,7 +24,6 @@ export const NavigationButton = () => {
 
 
             if (!parsedPersonalInfo.success) {
-                // 1. Access the array using .issues instead of .errors
                 const firstIssue = parsedPersonalInfo.error.issues[0]?.path[0];
                 const feild = firstIssue as string;
 
@@ -94,7 +93,7 @@ export const NavigationButton = () => {
         updateQuestionIndex(lastQuestionIndex);
     };
 
-    return <div className="flex justify-center gap-8 mt-10! [&_button]:px-6! [&_button]:py-5! [&_button]:bg-[#25544C]
+    return <div className="flex justify-center gap-8 mt-10! font-(family-name:--font-subhead)  [&_button]:px-6! [&_button]:py-5! [&_button]:bg-[#25544C]
                            [&_button]:hover:bg-[#2F6A60] [&_button]:cursor-pointer [&_button]:text-[17px]">
         <Button size="lg" onClick={handlePrevious}>
             Previous

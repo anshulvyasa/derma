@@ -12,20 +12,15 @@ const stats = [
     { value: "500+", label: "Successful treatments",images:"/icons/circles.png",size:60 },
     { value: "10+", label: "State-of-the-art facilities" ,images:"/icons/diamond.png",size:45},
   ];
-const image =[
 
-]
 
 
 export default function FacilitySection() {
   return (
     <section className="w-full py-7! items-center">
-      {/* Main content */}
       <div className="max-w-8xl mx-auto sm:px-6 lg:px-30! lg:py-6!">
         <div className="flex flex-col lg:flex-row items-center  gap-10 lg:gap-60">
-          {/* Images column */}
           <div className="relative w-full max-w-sm lg:max-w-md mx-auto lg:mx-0">
-            {/* Top image */}
             <div className="w-[80%] rounded-2xl">
               <Image
                 src="/images/sub1.png"
@@ -35,7 +30,6 @@ export default function FacilitySection() {
                 className="w-full h-auto object-cover"
               />
             </div>
-            {/* Bottom image - overlapping */}
             <div className="absolute -right-20 -bottom-20 z-0 w-[89%] rounded-2xl overflow-hidden ml-auto">
               <Image
                 src="/images/sub2.png"
@@ -47,7 +41,6 @@ export default function FacilitySection() {
             </div>
           </div>
 
-          {/* Text column */}
           <div className="flex-1 flex flex-col gap-5 text-center lg:text-left mt-16!">
             <h2 className="font-(family-name:--font-subhead) font-bold italic text-4xl sm:text-3xl lg:text-[3rem] text-[#25544c]">
               Why choose us for all your <br className="hidden sm:block" />

@@ -5,6 +5,7 @@ import { RadioGroup, RadioGroupItem } from "../ui/radio-group"
 import { useQuestions } from "@/lib/redux/selectorAndDispatcher/useQuestions"
 import { QuestionType } from "@/lib/questions-data"
 import { useMemo } from "react"
+import Image from "next/image"
 
 export const Question = ({ QuestionStatement, options }: QuestionType) => {
     const { majorIndex } = useMajorIndex();
@@ -25,14 +26,14 @@ export const Question = ({ QuestionStatement, options }: QuestionType) => {
 
     return (
         <div className="mt-15! font-sans text-[#25544C]">
-            <h2 className={`text-3xl font-bold mb-4! ${hasImages ? 'italic text-2xl mb-8!' : ''}`}>
+            <h2 className={`text-3xl font-bold mb-4! font-(family-name:--font-roboto) ${hasImages ? 'italic text-2xl mb-8!' : ''}`}>
                 {QuestionStatement}
             </h2>
             
             <RadioGroup
                 key={key}
                 className={`
-                    [&_label]:text-[17px] [&_button]:border-[#25544C] [&_button[data-state=checked]]:bg-[#25544C]
+                    [&_label]:text-[17px] font-(family-name:--font-roboto) [&_button]:border-[#25544C] [&_button[data-state=checked]]:bg-[#25544C]
                     ${hasImages ? "grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4" : "flex flex-col gap-3"}
                 `}
                 onValueChange={handleRadioOnChange}
@@ -60,10 +61,12 @@ export const Question = ({ QuestionStatement, options }: QuestionType) => {
 
                           
                             {hasImage && (
-                                <img 
-                                    src={option.imageUrl} 
-                                    alt={option.text} 
-                                    className="h-16 w-auto object-contain mix-blend-multiply" 
+                                <Image 
+                                    src={option.imageUrl??""} 
+                                    alt={option.text??""} 
+                                    className="h-21 w-auto object-contain mix-blend-multiply" 
+                                    height={100}
+                                    width={100}
                                 />
                             )}
                         </div>
@@ -71,7 +74,7 @@ export const Question = ({ QuestionStatement, options }: QuestionType) => {
                 })}
             </RadioGroup>
             
-            <div className="mt-8">
+            <div className="mt-8 mb-15!">
                 <NavigationButton />
             </div>
         </div>

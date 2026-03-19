@@ -13,7 +13,7 @@ export const CurrentHairSection = () => {
         ${isActive(0) ? "border-[3.5px]" : "border-2"}`}
       >
         <span className="text-[19px]">1</span>
-        <span className="absolute top-full mt-2! left-1/2 -translate-x-1/2 whitespace-nowrap text-sm font-semibold text-[#555555]">
+        <span className="absolute top-full font-(family-name:--font-viga) mt-2! left-1/2 -translate-x-1/2 whitespace-nowrap text-md font-medium text-[#555555]">
           About You
         </span>
       </div>
@@ -28,7 +28,7 @@ export const CurrentHairSection = () => {
         ${isActive(1) ? "border-[3.5px]" : "border-2"}`}
       >
         2
-        <span className="absolute top-full mt-2! left-1/2 -translate-x-1/2 whitespace-nowrap text-sm font-semibold text-[#555555]">
+        <span className="absolute top-full font-(family-name:--font-viga) mt-2! left-1/2 -translate-x-1/2 whitespace-nowrap text-md font-medium text-[#555555]">
           Hair Condition
         </span>
       </div>
@@ -43,7 +43,7 @@ export const CurrentHairSection = () => {
         ${isActive(2) ? "border-[3.5px]" : "border-2"}`}
       >
         3
-        <span className="absolute top-full mt-2! left-1/2 -translate-x-1/2 whitespace-nowrap text-sm font-semibold text-[#555555]">
+        <span className="absolute top-full font-(family-name:--font-viga) mt-2! left-1/2 -translate-x-1/2 whitespace-nowrap text-md font-medium text-[#555555]">
           Internal Health
         </span>
       </div>
@@ -58,7 +58,7 @@ export const CurrentHairSection = () => {
         ${isActive(3) ? "border-[3.5px]" : "border-2"}`}
       >
         4
-        <span className="absolute top-full mt-2! left-1/2 -translate-x-1/2 whitespace-nowrap text-sm font-semibold text-[#555555]">
+        <span className="absolute top-full font-(family-name:--font-viga) mt-2! left-1/2 -translate-x-1/2 whitespace-nowrap text-md font-medium text-[#555555]">
           Scalp Analysis
         </span>
       </div>

@@ -10,7 +10,7 @@ const HairTreatement = () => {
 
     return (
         <main className="px-30! overflow-hidden">
-            <h1 className="text-[#25544C] font-serif text-[44px] mt-20! font-semibold ">Let us know more about you.</h1>
+            <h1 className="text-[#25544C] text-[44px] mt-20! text-center pb-4! font-semibold  font-(family-name:--font-subhead)">Let us know more about you.</h1>
 
             <CurrentHairSection />
             <div className="flex justify-center">

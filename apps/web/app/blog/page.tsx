@@ -83,9 +83,9 @@ export default function BlogPage() {
     ? posts
     : posts.filter(post => post.category === activeCategory);
   return (
-    <div className="min-h-screen text-[#1D423E]">
+    <main className="min-h-screen bg-[#F1F8F6] text-[#1D423E]">
       {/* HERO SECTION */}
-      <section className="relative px-10! mx-auto h-[450px] flex items-center justify-center overflow-hidden bg-white">
+      <section className="relative px-10! mx-auto h-[450px] flex items-center justify-center overflow-hidden bg-[#F1F8F6]">
           <Image
             src="/images/blog-image.png" 
             alt="Dermatology treatment" 
@@ -146,16 +146,12 @@ export default function BlogPage() {
         </div>
       </div>
 
-      {/* RECENT BLOGS GRID */}
      <section className="container mx-auto px-6! lg:px-20 py-16!">
 
-
-  {/* Latest Post */}
   {latestPost && (
-  <div className="group max-w-[500px] border-b-gray-400 rounded-3xl overflow-hidden 
+  <div className="group max-w-[500px] bg-white border-b-gray-500 rounded-3xl overflow-hidden 
   border border-[#E8F0ED] shadow-sm hover:shadow-xl transition-all duration-500 mb-14!">
 
-    {/* Image */}
     <div className="relative overflow-hidden">
       <Image
         src={latestPost.image}
@@ -209,7 +205,7 @@ export default function BlogPage() {
     {otherPosts.map((post, index) => (
       <div
         key={index}
-        className="group rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all"
+        className="group rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all bg-[#FFFFFF]"
       >
 
         <div className="h-48 overflow-hidden">
@@ -247,6 +243,6 @@ export default function BlogPage() {
 
 </section>
       </div>
-    </div>
+    </main>
   )
 }

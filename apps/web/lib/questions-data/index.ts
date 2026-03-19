@@ -202,12 +202,12 @@ export const scalpAnalysisQuestion: QuestionType[] = [
     {
         QuestionStatement: "On Which Stage You are On?",
         options: {
-            "1": { text: "Baseline: Full Hair", imageUrl: "/hairfall-stage-1.png" },
-            "2": { text: "Minor Recession (V-Shape)", imageUrl: "/hairfall-stage-2.png" },
-            "3": { text: "Defined M-Shape (Frontal only)", imageUrl: "/hairfall-stage-3.png" },
-            "4": { text: "M-Shape + Vertex Start", imageUrl: "/hairfall-stage-4.png" },
-            "5": { text: "Narrow Bridge (Advanced Vertex involvement)", imageUrl: "/hairfall-stage-5.png" },
-            "6": { text: "Horseshoe Pattern (Merged)", imageUrl: "/hairfall-stage-6.png" }
+            "1": { text: "Baseline: Full Hair", imageUrl: "/hairfall/stage1.png" },
+            "2": { text: "Minor Recession (V-Shape)", imageUrl: "/hairfall/stage2.png" },
+            "3": { text: "Defined M-Shape (Frontal only)", imageUrl: "/hairfall/stage3.png" },
+            "4": { text: "M-Shape + Vertex Start", imageUrl: "/hairfall/stage4.png" },
+            "5": { text: "Narrow Bridge (Advanced Vertex involvement)", imageUrl: "/hairfall/stage5.png" },
+            "6": { text: "Horseshoe Pattern (Merged)", imageUrl: "/hairfall/Stage6.png" }
         }
     }
 ]
