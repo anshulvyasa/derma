@@ -7,11 +7,9 @@ RUN corepack enable && corepack prepare pnpm@latest --activate
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml turbo.json  ./
 
 COPY apps/web/package.json apps/web/
-COPY packages/db/package.json packages/db/
 COPY packages/zod/package.json packages/zod/
 COPY packages/eslint-config/package.json packages/eslint-config/
 COPY packages/typescript-config/package.json packages/typescript-config/
-COPY packages/utilities/package.json packages/utilities/package.json
 
 RUN pnpm install --frozen-lockfile
 
